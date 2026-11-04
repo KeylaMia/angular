@@ -1,9 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
+import { CommonModule} from '@angular/common'
 
 @Component({
   selector: 'app-form-reactivo',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './form-reactivo.html',
   styleUrl: './form-reactivo.css',
 })

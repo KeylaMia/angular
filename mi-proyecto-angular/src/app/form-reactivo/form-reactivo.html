@@ -1,9 +1,14 @@
+<h2>Formulario reactivo</h2>
 <form [formGroup]="miForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="nombre">Nombre</label><input id="nombre" formControlName="nombre">
     </div>
     <div>
         <label for="email">Email</label><input id="email" formControlName="email">
+        <div *ngIf="miForm.get('email')?.touched && miForm.get('email')?.invalid">
+            <small *ngIf="miForm.get('email')?.errors?.['required']">Email es obligatorio</small>
+            <small *ngIf="miForm.get('email')?.errors?.['email']">Email no es válido</small>
+        </div>
     </div>
     <button type="submit" [disabled]="miForm.invalid">Enviar</button>
 </form>
